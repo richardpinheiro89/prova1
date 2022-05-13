@@ -15,24 +15,23 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
   </properties>
-
+ 
   <dependencies>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.8.1</version>
-      <exclusions>
-      	<exclusion>
-      		<groupId>org.junit.platform</groupId>
-      		<artifactId>junit-platform-engine</artifactId>
-      	</exclusion>
-      </exclusions>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
-
+  
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
@@ -84,4 +83,19 @@
       </plugin>
     </plugins>
   </reporting>
+
+ <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>org.junit.jupiter</groupId>
+  			<artifactId>junit-jupiter-engine</artifactId>
+  			<version>5.8.1</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.junit.jupiter</groupId>
+  			<artifactId>junit-jupiter-params</artifactId>
+  			<version>5.8.1</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
 </project>
